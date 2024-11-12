@@ -1,0 +1,17 @@
+<div style="margin: 10px">
+  <input type="text" id="generated-url" value="{{.URL}}" readonly hidden>
+  <div style="display: inline-block; margin-right: 5px;">
+    {{.URL}}
+  </div>
+  <button onclick="copyToClipboard()">Copiar</button>
+</div>
+
+<script>
+  function copyToClipboard() {
+    const urlField = document.getElementById("generated-url");
+    urlField.select();
+    urlField.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(urlField.value);
+    console.log("URL copiada para a área de transferência!");
+  }
+</script>
